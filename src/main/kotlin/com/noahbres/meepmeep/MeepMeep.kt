@@ -267,6 +267,17 @@ open class MeepMeep @JvmOverloads constructor(private val windowX: Int, private 
     fun setBackground(background: Background = Background.GRID_BLUE): MeepMeep {
         val classLoader = Thread.currentThread().contextClassLoader
 
+        fun rotated(im: BufferedImage, angle: Double): BufferedImage {
+            val rotatedImage = BufferedImage(im.height, im.width, im.type)
+            val graphics2D = rotatedImage.createGraphics()
+            graphics2D.rotate(angle)
+            graphics2D.drawImage(im, null, 0, -im.height)
+            return rotatedImage
+        }
+
+
+
+
         bg = when (background) {
             Background.GRID_BLUE -> {
                 colorManager.isDarkMode = false
@@ -338,11 +349,11 @@ open class MeepMeep @JvmOverloads constructor(private val windowX: Int, private 
             }
             Background.FIELD_CENTERSTAGE_JUICE_LIGHT_CRI -> {
                 colorManager.isDarkMode = false
-                ImageIO.read(classLoader.getResourceAsStream("background/CRI/field-2023-juice-light-cri.png"))
+                rotated(ImageIO.read(classLoader.getResourceAsStream("background/CRI/field-2023-juice-light-cri.png")))
             }
             Background.FIELD_CENTERSTAGE_JUICE_DARK_CRI -> {
                 colorManager.isDarkMode = false
-                ImageIO.read(classLoader.getResourceAsStream("background/CRI/field-2023-juice-dark-cri.png"))
+                rotated(ImageIO.read(classLoader.getResourceAsStream("background/CRI/field-2023-juice-dark-cri.png")))
             }
         }.getScaledInstance(windowX, windowY, Image.SCALE_SMOOTH)
 
