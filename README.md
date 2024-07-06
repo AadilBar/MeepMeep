@@ -149,7 +149,7 @@ import com.noahbres.meepmeep.roadrunner.entity.RoadRunnerBotEntity;
 
 public class MeepMeepTesting {
     public static void main(String[] args) {
-        MeepMeep meepMeep = new MeepMeep(800);
+        MeepMeep meepMeep = new MeepMeep(1365, 1024);
 
         // Declare our first bot
         RoadRunnerBotEntity myFirstBot = new DefaultBotBuilder(meepMeep)
