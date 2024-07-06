@@ -15,7 +15,7 @@ import java.awt.event.*
 import javax.imageio.ImageIO
 import javax.swing.*
 import javax.swing.border.EtchedBorder
-
+import java.awt.image.BufferedImage
 
 
 open class MeepMeep @JvmOverloads constructor(private val windowX: Int, private val windowY: Int, fps: Int = 60) {
@@ -349,11 +349,11 @@ open class MeepMeep @JvmOverloads constructor(private val windowX: Int, private 
             }
             Background.FIELD_CENTERSTAGE_JUICE_LIGHT_CRI -> {
                 colorManager.isDarkMode = false
-                rotated(ImageIO.read(classLoader.getResourceAsStream("background/CRI/field-2023-juice-light-cri.png")))
+                rotated(ImageIO.read(classLoader.getResourceAsStream("background/CRI/field-2023-juice-light-cri.png")), Math.toRadians(90.0))
             }
             Background.FIELD_CENTERSTAGE_JUICE_DARK_CRI -> {
                 colorManager.isDarkMode = false
-                rotated(ImageIO.read(classLoader.getResourceAsStream("background/CRI/field-2023-juice-dark-cri.png")))
+                rotated(ImageIO.read(classLoader.getResourceAsStream("background/CRI/field-2023-juice-dark-cri.png")), Math.toRadians(90.0))
             }
         }.getScaledInstance(windowX, windowY, Image.SCALE_SMOOTH)
 
