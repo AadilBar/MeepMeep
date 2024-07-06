@@ -2,7 +2,7 @@
 
 [![Release](https://jitpack.io/v/NoahBres/MeepMeep.svg)](https://jitpack.io/#NoahBres/MeepMeep)
 
-Path creation/visualization tool for Road Runner
+Path creation/visualization tool for Road Runner. Updated to include modified field for the Chicago Robotics Invitational.
 
 <img src="/images/readme/screen-recording.gif" width="500" height="500"/>
 
@@ -37,12 +37,13 @@ Path creation/visualization tool for Road Runner
 
 ```
 repositories {
+    mavenCentral()
     maven { url = 'https://jitpack.io' }
     maven { url = 'https://maven.brott.dev/' }
 }
 
 dependencies {
-    implementation 'com.github.NoahBres:MeepMeep:2.0.3'
+    implementation 'com.github.Unknown-Element-FTC-10635:MeepMeep:1.0.0'
 }
 ```
 
