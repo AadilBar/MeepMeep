@@ -3,31 +3,19 @@ package com.noahbres.meepmeep
 import com.acmerobotics.roadrunner.geometry.Vector2d
 import com.noahbres.meepmeep.core.colorscheme.ColorManager
 import com.noahbres.meepmeep.core.colorscheme.ColorScheme
-import com.noahbres.meepmeep.core.entity.AxesEntity
-import com.noahbres.meepmeep.core.entity.CompassEntity
-import com.noahbres.meepmeep.core.entity.Entity
-import com.noahbres.meepmeep.core.entity.EntityEventListener
-import com.noahbres.meepmeep.core.entity.ThemedEntity
-import com.noahbres.meepmeep.core.entity.ZIndexManager
+import com.noahbres.meepmeep.core.entity.*
 import com.noahbres.meepmeep.core.ui.WindowFrame
 import com.noahbres.meepmeep.core.util.FieldUtil
 import com.noahbres.meepmeep.core.util.LoopManager
 import com.noahbres.meepmeep.roadrunner.entity.RoadRunnerBotEntity
 import com.noahbres.meepmeep.roadrunner.ui.TrajectoryProgressSliderMaster
-import java.awt.AlphaComposite
-import java.awt.Font
-import java.awt.Graphics2D
-import java.awt.Image
-import java.awt.RenderingHints
-import java.awt.Toolkit
+import java.awt.*
 import java.awt.datatransfer.StringSelection
-import java.awt.event.KeyEvent
-import java.awt.event.KeyListener
-import java.awt.event.MouseEvent
-import java.awt.event.MouseListener
-import java.awt.event.MouseMotionListener
+import java.awt.event.*
 import javax.imageio.ImageIO
-import javax.swing.UIManager
+import javax.swing.*
+import javax.swing.border.EtchedBorder
+
 
 
 open class MeepMeep @JvmOverloads constructor(private val windowX: Int, private val windowY: Int, fps: Int = 60) {
@@ -356,9 +344,6 @@ open class MeepMeep @JvmOverloads constructor(private val windowX: Int, private 
                 colorManager.isDarkMode = false
                 ImageIO.read(classLoader.getResourceAsStream("background/CRI/field-2023-juice-dark-cri.png"))
             }
-
-            
-
         }.getScaledInstance(windowX, windowY, Image.SCALE_SMOOTH)
 
         refreshTheme()
@@ -497,8 +482,8 @@ open class MeepMeep @JvmOverloads constructor(private val windowX: Int, private 
         FIELD_POWERPLAY_KAI_LIGHT,
         FIELD_CENTERSTAGE_OFFICIAL,
         FIELD_CENTERSTAGE_JUICE_DARK,
-        FIELD_CENTERSTAGE_JUICE_LIGHT
-        FIELD_CENTERSTAGE_JUICE_DARK_CRI
-        FIELD_CENTERSTAGE_JUICE_LIGHT_CRI
+        FIELD_CENTERSTAGE_JUICE_LIGHT,
+        FIELD_CENTERSTAGE_JUICE_DARK_CRI,
+        FIELD_CENTERSTAGE_JUICE_LIGHT_CRI,
     }
 }
